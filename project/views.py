@@ -73,6 +73,7 @@ def patient(request,pk):
 # kakak
 class ApiDisserialiser(APIView):
     def get(self, request):
+        
         disease =Disease.objects.all()
         serializer =Disserialiser(disease,many=True)
         return Response(serializer.data)
