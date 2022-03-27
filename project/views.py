@@ -70,6 +70,7 @@ def patient(request,pk):
 
 
 #The disease  view
+# kakak
 class ApiDisserialiser(APIView):
     def get(self, request):
         disease =Disease.objects.all()
@@ -208,7 +209,6 @@ class ApiOff_availabserialiser(APIView):
         serializer =off_availabserialiser(Office_doctor_available,many=True)
         return Response(serializer.data)
 
-    def post(self, request):
         serializer =Off_availabserialiser(data=request.data)
         if serializer.is_valid():
             serializer.save()
